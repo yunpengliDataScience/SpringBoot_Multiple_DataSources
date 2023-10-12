@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
 	<Properties>
-		<Property name="LOG_LOCATION">c:/logs/SpringBoot_Thymeleaf_Demo</Property>
+		<Property name="LOG_LOCATION">c:/logs/SpringBoot_Multiple_DataSources</Property>
 	</Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
@@ -10,7 +10,7 @@
         </Console>
 
         <RollingFile name="RollingFile"
-            fileName="${LOG_LOCATION}/SpringBoot_Thymeleaf_Demo.log"
+            fileName="${LOG_LOCATION}/SpringBoot_Multiple_DataSources.log"
             filePattern="${LOG_LOCATION}/SpringBoot_Thymeleaf_Demo-%d{-dd-MMMM-yyyy}-%i.log">
             <PatternLayout>
                 <pattern>%d %p %C{1.} [%t] %m%n</pattern>

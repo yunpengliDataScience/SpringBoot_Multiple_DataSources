@@ -21,14 +21,14 @@ public class UserController {
 	@GetMapping("/user/signup")
 	public String showSignUpForm(User user) {
 
-		return "add-user";
+		return "addUser";
 	}
 
 	@PostMapping("/user/adduser")
 	public String addUser(@Valid User user, BindingResult result, Model model) {
 
 		if (result.hasErrors()) {
-			return "add-user";
+			return "addUser";
 		}
 
 		userRepository.save(user);
@@ -42,7 +42,7 @@ public class UserController {
 				.orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 		model.addAttribute("user", user);
 
-		return "update-user";
+		return "updateUser";
 	}
 
 	@PostMapping("/user/update/{id}")

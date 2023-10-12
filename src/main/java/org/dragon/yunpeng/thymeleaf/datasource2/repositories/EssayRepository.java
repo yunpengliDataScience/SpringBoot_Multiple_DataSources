@@ -11,7 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EssayRepository extends CrudRepository<Essay, Long> {  //TODO: Why JpaRepository not work?
+public interface EssayRepository extends JpaRepository<Essay, Long> {  //TODO: Why JpaSpecificationExecutor not work?
 
 	List<Essay> findByAuthor(String author);
 

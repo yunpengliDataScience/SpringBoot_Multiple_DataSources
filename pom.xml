@@ -64,23 +64,6 @@
 	        <groupId>com.h2database</groupId>
 	        <artifactId>h2</artifactId>
 	    </dependency>
-	    
-	    <dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-		
-		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-data-rest</artifactId>
-		    <exclusions>
-				<!-- exclude deprecated module in favor of spring-data-rest-hal-explorer -->
-				<exclusion>
-					<groupId>org.springframework.data</groupId>
-					<artifactId>spring-data-rest-hal-browser</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
 		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -89,43 +72,10 @@
 			<optional>true</optional>
 		</dependency>
 		
-		<!-- Hal explorer -->
-		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>hal-explorer</artifactId>
-		    <version>1.1.0</version>
-		</dependency>
-		<!--  
-	    <dependency>
-			<groupId>org.springframework.data</groupId>
-			<artifactId>spring-data-rest-hal-explorer</artifactId>
-		</dependency>
-		-->
-		
 	    <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
         </dependency>
-        
-        <!-- Micrometer Prometheus registry  -->
-		<dependency>
-			<groupId>io.micrometer</groupId>
-			<artifactId>micrometer-registry-prometheus</artifactId>
-		</dependency>
-		
-		<!-- Prometheus Instrumentation -->
-		<!-- The client 
-		<dependency>
-		  <groupId>io.prometheus</groupId>
-		  <artifactId>simpleclient</artifactId>
-		  <version>0.16.0</version>
-		</dependency>
-		<dependency>
-			<groupId>io.prometheus</groupId>
-			<artifactId>simpleclient_spring_boot</artifactId>
-			<version>0.16.0</version>
-		</dependency>
-    	-->
     	
     	<dependency>
 			<groupId>org.jsoup</groupId>
@@ -141,8 +91,6 @@
 			-->
 			<version>4.6.1</version>
 		</dependency>
-
-		
 
 		<dependency>
 			<groupId>org.webjars</groupId>
@@ -177,26 +125,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			
-			<plugin>
-			    <groupId>org.jacoco</groupId>
-			    <artifactId>jacoco-maven-plugin</artifactId>
-			    <version>0.8.10</version>
-			    <executions>
-			        <execution>
-			            <goals>
-			                <goal>prepare-agent</goal>
-			            </goals>
-			        </execution>
-			        <execution>
-			            <id>report</id>
-			            <phase>prepare-package</phase>
-			            <goals>
-			                <goal>report</goal>
-			            </goals>
-			        </execution>
-			    </executions>
 			</plugin>
 			
 		</plugins>

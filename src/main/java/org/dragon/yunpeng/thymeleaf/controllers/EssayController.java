@@ -1,7 +1,5 @@
 package org.dragon.yunpeng.thymeleaf.controllers;
 
-import java.util.Optional;
-
 import org.dragon.yunpeng.thymeleaf.datasource2.entities.Essay;
 import org.dragon.yunpeng.thymeleaf.datasource2.repositories.EssayRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,7 +58,7 @@ public class EssayController {
 
 	@GetMapping("/essay/delete/{id}")
 	public String deleteEssay(@PathVariable("id") long id, Model model) {
-		Essay essay =essayRepository.findById(id).get();
+		Essay essay = essayRepository.findById(id).get();
 
 		essayRepository.delete(essay);
 
