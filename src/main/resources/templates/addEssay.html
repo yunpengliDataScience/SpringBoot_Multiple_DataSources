@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Add User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/4.6.1/css/bootstrap.min.css}" />
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/font-awesome/5.15.4/css/all.css}" />
+
+    <link rel="stylesheet" th:href="@{css/style.css}">
+    
+    <!-- Order is important: jquery, popper, bootstrap -->
+	<script type="text/javascript" th:src="@{/webjars/jquery/3.5.1/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/popper.js/1.16.0/umd/popper.min.js}"></script>
+	<script type="text/javascript" th:src="@{/webjars/bootstrap/4.6.1/js/bootstrap.min.js}"></script>
+    
+</head>
+<body>
+
+	<div class="container my-5">
+		<h2 class="mb-5">New Essay</h2>
+		<div class="row">
+			<div class="col-md-12">
+				<form action="#" th:action="@{/essay/saveNewEssay}" th:object="${essay}" method="post">
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="name" class="col-form-label">Title</label>
+							<input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Title"
+								required="required">
+							<span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-danger"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="author" class="col-form-label">Author</label>
+							<input type="text" th:field="*{author}" class="form-control" id="author"
+								placeholder="Author" required="required">
+							<span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"
+								class="text-danger"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="content" class="col-form-label">Content</label>
+							<textarea class="form-control" id="content" rows="5" name="content" placeholder="Content"
+								th:field="*{content}" required="required"></textarea>
+							<span th:if="${#fields.hasErrors('content')}" th:errors="*{content}"
+								class="text-danger"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 mt-5">
+							<input type="submit" class="btn btn-primary" value="Add Essay">
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+</html>
